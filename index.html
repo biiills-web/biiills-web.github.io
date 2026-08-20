@@ -12,15 +12,97 @@
   </head>
   <body>
     <main class="page-shell">
-      <section class="countdown-section">
-        <div class="countdown-heading">COLLECTION IV LAUNCH IN</div>
-        <div class="countdown-grid" data-target-date="2027-02-28T23:59:59Z">
-          <div class="countdown-col"><div class="countdown-label">Days</div><div class="countdown-digits" data-days>00</div></div>
-          <div class="countdown-col"><div class="countdown-label">Hours</div><div class="countdown-digits" data-hours>00</div></div>
-          <div class="countdown-col"><div class="countdown-label">Minutes</div><div class="countdown-digits" data-minutes>00</div></div>
-          <div class="countdown-col"><div class="countdown-label">Seconds</div><div class="countdown-digits" data-seconds>00</div></div>
-        </div>
-      </section>
+<countdown-timer-at3vndkl0ekpmwni3baigenblockb3619fa3buqem class="ai-countdown-timer-at3vndkl0ekpmwni3baigenblockb3619fa3buqem" data-target-date="2027-02-28T23:59:59Z">
+  <div class="ai-countdown-timer__wrapper-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+    
+      <div class="ai-countdown-timer__heading-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">COLLECTION IV LAUNCH IN</div>
+    
+
+    <div class="ai-countdown-timer__container-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+      <div class="ai-countdown-timer__column-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+        <div class="ai-countdown-timer__label-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">Days</div>
+        <div class="ai-countdown-timer__digits-at3vndkl0ekpmwni3baigenblockb3619fa3buqem" data-days="">194</div>
+      </div>
+
+      <div class="ai-countdown-timer__column-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+        <div class="ai-countdown-timer__label-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">Hours</div>
+        <div class="ai-countdown-timer__digits-at3vndkl0ekpmwni3baigenblockb3619fa3buqem" data-hours="">03</div>
+      </div>
+
+      <div class="ai-countdown-timer__column-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+        <div class="ai-countdown-timer__label-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">Minutes</div>
+        <div class="ai-countdown-timer__digits-at3vndkl0ekpmwni3baigenblockb3619fa3buqem" data-minutes="">53</div>
+      </div>
+
+      <div class="ai-countdown-timer__column-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">
+        <div class="ai-countdown-timer__label-at3vndkl0ekpmwni3baigenblockb3619fa3buqem">Seconds</div>
+        <div class="ai-countdown-timer__digits-at3vndkl0ekpmwni3baigenblockb3619fa3buqem" data-seconds="">55</div>
+      </div>
+    </div>
+  </div>
+</countdown-timer-at3vndkl0ekpmwni3baigenblockb3619fa3buqem>
+
+<script>
+  (function() {
+    class CountdownTimerat3vndkl0ekpmwni3baigenblockb3619fa3buqem extends HTMLElement {
+      constructor() {
+        super();
+        this.targetDate = new Date(this.dataset.targetDate);
+        this.daysElement = this.querySelector('[data-days]');
+        this.hoursElement = this.querySelector('[data-hours]');
+        this.minutesElement = this.querySelector('[data-minutes]');
+        this.secondsElement = this.querySelector('[data-seconds]');
+      }
+
+      connectedCallback() {
+        this.updateCountdown();
+        this.interval = setInterval(() => this.updateCountdown(), 1000);
+      }
+
+      disconnectedCallback() {
+        if (this.interval) {
+          clearInterval(this.interval);
+        }
+      }
+
+      updateCountdown() {
+        const now = new Date();
+        const difference = this.targetDate - now;
+
+        if (difference <= 0) {
+          this.daysElement.textContent = '00';
+          this.hoursElement.textContent = '00';
+          this.minutesElement.textContent = '00';
+          this.secondsElement.textContent = '00';
+          if (this.interval) {
+            clearInterval(this.interval);
+          }
+          return;
+        }
+
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        this.daysElement.textContent = String(days).padStart(2, '0');
+        this.hoursElement.textContent = String(hours).padStart(2, '0');
+        this.minutesElement.textContent = String(minutes).padStart(2, '0');
+        this.secondsElement.textContent = String(seconds).padStart(2, '0');
+      }
+    }
+
+    customElements.define('countdown-timer-at3vndkl0ekpmwni3baigenblockb3619fa3buqem', CountdownTimerat3vndkl0ekpmwni3baigenblockb3619fa3buqem);
+  })();
+</script>
+
+
+
+
+    </div>
+  </div>
+</div>
+
 
       
 <section class="collection-section">
